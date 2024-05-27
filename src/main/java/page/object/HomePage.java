@@ -1,14 +1,14 @@
-package pageObject;
+package page.object;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import java.time.Duration;
+import page.object.constants.Buttons;
+import page.object.constants.ScooterColours;
 
-import static pageObject.constants.Buttons.ORDER_BUTTON;
-import static pageObject.constants.Buttons.NEXT_BUTTON;
+import java.time.Duration;
 
 public class HomePage {
     WebDriver driver;
@@ -63,42 +63,23 @@ public class HomePage {
         return this;
     }
 
-    //нажать создать заказ
-    public void clickCreateOrderButton(Enum button) {
-        if (button.equals(ORDER_BUTTON)) {
-            clickOrderButton();
-        } else if (button.equals(NEXT_BUTTON)) {
-            scrollToNextOrderButton();
-            clickNextOrderButton();
+    public HomePage clickCreateOrderButton(Buttons buttons) {
+        switch (buttons) {
+            case ORDER_BUTTON:
+                clickOrderButton();
+                break;
+            case NEXT_BUTTON:
+                scrollToNextOrderButton();
+                clickNextOrderButton();
+                break;
         }
+        return  this;
     }
 
     //нажать на вопросы
     public HomePage clickQuestion(By question) {
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.elementToBeClickable(question))
-                .click();
-        return this;
-    }
-
-    //ввести номер заказа
-    public HomePage inputOrderNumber(String number) {
-        new WebDriverWait(driver, Duration.ofSeconds(3))
-                .until(ExpectedConditions.elementToBeClickable(numberOfOrder))
-                .sendKeys(number);
-        return this;
-    }
-
-    //узнать статус заказа
-    public HomePage clickOrderState() {
-        driver.findElement(stateOfOrder).click();
-        return this;
-    }
-
-    //нажать гоу
-    public HomePage clickGo() {
-        new WebDriverWait(driver, Duration.ofSeconds(3))
-                .until(ExpectedConditions.elementToBeClickable(goButton))
                 .click();
         return this;
     }

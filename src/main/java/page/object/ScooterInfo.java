@@ -1,13 +1,12 @@
-package pageObject;
+package page.object;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import page.object.constants.ScooterColours;
 
 import java.time.Duration;
-
-import static pageObject.constants.ScooterColours.*;
 
 public class ScooterInfo {
     WebDriver driver;
@@ -18,6 +17,7 @@ public class ScooterInfo {
     private final By colourGrey = By.id("grey");
     private final By comment = By.xpath(".//input[@placeholder='Комментарий для курьера']");
     private final By createOrderButton = By.xpath(".//button[@class='Button_Button__ra12g Button_Middle__1CSJM']");
+
 
     public ScooterInfo(WebDriver driver) {
         this.driver = driver;
@@ -44,14 +44,15 @@ public class ScooterInfo {
         return this;
     }
 
-    //изменение цвета
-    public ScooterInfo changeColour(Enum colour) {
-        if (colour.equals(BLACK_PEARL)) {
-            driver.findElement(colourBlack).click();
-        } else if (colour.equals(GREY_HOPELESSNESS)) {
-            driver.findElement(colourGrey).click();
+    public ScooterInfo changeColour(ScooterColours scooterColours) {
+        switch (scooterColours) {
+            case BLACK_PEARL:
+                driver.findElement(colourBlack).click();
+                break;
+            case GREY_HOPELESSNESS:
+                driver.findElement(colourGrey).click();
         }
-        return this;
+        return  this;
     }
 
     //ввод комментария к заказу

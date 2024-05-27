@@ -1,4 +1,4 @@
-package pageObject.constants;
+package page.object.constants;
 
 import org.openqa.selenium.By;
 

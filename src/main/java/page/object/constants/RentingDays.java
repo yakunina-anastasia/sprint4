@@ -1,4 +1,4 @@
-package pageObject.constants;
+package page.object.constants;
 
 public class RentingDays {
     public static final String DAY_1 = "сутки";
