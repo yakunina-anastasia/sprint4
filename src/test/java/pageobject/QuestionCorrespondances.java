@@ -1,17 +1,17 @@
-package page.object;
+package pageobject;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.By;
 
-import page.object.constants.QuestionList;
+import pageobject.constants.QuestionList;
 
 import static org.junit.Assert.assertEquals;
 
 
 @RunWith(Parameterized.class)
-public class QuestionCorrespondances extends ForTests {
+public class QuestionCorrespondances extends BaseTest {
     private final By question;
     private final By answer;
     private final By labelResult;

@@ -1,4 +1,4 @@
-package page.object.constants;
+package pageobject.constants;
 
 public enum ScooterColours {
     BLACK_PEARL,

@@ -1,22 +1,20 @@
-package page.object;
+package pageobject;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import static org.junit.Assert.assertTrue;
 
-import page.object.constants.Buttons;
-import page.object.constants.RentingDays;
-import page.object.constants.ScooterColours;
+import pageobject.constants.Buttons;
+import pageobject.constants.RentingDays;
+import pageobject.constants.ScooterColours;
 
 
-import static page.object.constants.Buttons.NEXT_BUTTON;
-import static page.object.constants.Buttons.ORDER_BUTTON;
-import static page.object.constants.ScooterColours.BLACK_PEARL;
-import static page.object.constants.ScooterColours.GREY_HOPELESSNESS;
+import static pageobject.constants.Buttons.NEXT_BUTTON;
+import static pageobject.constants.Buttons.ORDER_BUTTON;
 
 @RunWith(Parameterized.class)
-public class ScooterOrder extends ForTests {
+public class ScooterOrder extends BaseTest {
     private final Buttons buttons;
     private final String name;
     private final String surname;
@@ -46,11 +44,11 @@ public class ScooterOrder extends ForTests {
     @Parameterized.Parameters
     public static Object[][] getParameters() {
         return new Object[][]{
-                {ORDER_BUTTON, "Владимир", "Ленский", "Ул. Пушкинская, д. 1", 1, "88005553535", "01.06.2024", RentingDays.DAY_1, BLACK_PEARL, "а ну, ладно"},
-                {ORDER_BUTTON, "Евгений", "Онегин", "Ул. Пушкинская, д. 2", 11, "88005553534", "02.06.2024", RentingDays.DAY_2, GREY_HOPELESSNESS, "хочу спать жесть"},
-                {ORDER_BUTTON, "Татьяна", "Ларина", "Ул. Пушкинская, д. 3", 111, "78005553535", "03.06.2024", RentingDays.DAY_3, BLACK_PEARL, "привезите кибимпаб"},
-                {NEXT_BUTTON, "Сестра", "Ларина", "Ул. Пушкинская, д. 4", 12, "88007773535", "04.06.2024", RentingDays.DAY_4, GREY_HOPELESSNESS, "мамаааааа уууууу"},
-                {NEXT_BUTTON, "Жоне", "Рыдайло", "Ул. Пушкинская, д. 5", 13, "89005553535", "05.06.2024", RentingDays.DAY_5, BLACK_PEARL, "емае альбом от пилотов вышел"},
+                {ORDER_BUTTON, "Владимир", "Ленский", "Ул. Пушкинская, д. 1", 1, "88005553535", "01.06.2024", RentingDays.DAY_1, ScooterColours.BLACK_PEARL, "а ну, ладно"},
+                {ORDER_BUTTON, "Евгений", "Онегин", "Ул. Пушкинская, д. 2", 11, "88005553534", "02.06.2024", RentingDays.DAY_2, ScooterColours.GREY_HOPELESSNESS, "хочу спать жесть"},
+                {ORDER_BUTTON, "Татьяна", "Ларина", "Ул. Пушкинская, д. 3", 111, "78005553535", "03.06.2024", RentingDays.DAY_3, ScooterColours.BLACK_PEARL, "привезите кибимпаб"},
+                {NEXT_BUTTON, "Сестра", "Ларина", "Ул. Пушкинская, д. 4", 12, "88007773535", "04.06.2024", RentingDays.DAY_4, ScooterColours.GREY_HOPELESSNESS, "мамаааааа уууууу"},
+                {NEXT_BUTTON, "Жоне", "Рыдайло", "Ул. Пушкинская, д. 5", 13, "89005553535", "05.06.2024", RentingDays.DAY_5, ScooterColours.BLACK_PEARL, "емае альбом от пилотов вышел"},
         };
     }
 

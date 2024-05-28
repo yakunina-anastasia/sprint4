@@ -1,22 +1,22 @@
-package page.object;
+package pageobject;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pageobject.constants.Site;
 //import org.openqa.selenium.firefox.FirefoxDriver;
 
-import static page.object.constants.Site.SITE;
 
-public class ForTests {
+public class BaseTest {
     public WebDriver driver;
 
     @Before
    public void startUp() {
        WebDriverManager.chromedriver().setup();
      driver = new ChromeDriver();
-      driver.get(SITE);
+      driver.get(Site.SITE);
    }
 
 //    @Before

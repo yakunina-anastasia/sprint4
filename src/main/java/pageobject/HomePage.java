@@ -1,12 +1,11 @@
-package page.object;
+package pageobject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import page.object.constants.Buttons;
-import page.object.constants.ScooterColours;
+import pageobject.constants.Buttons;
 
 import java.time.Duration;
 

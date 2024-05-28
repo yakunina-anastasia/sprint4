@@ -1,4 +1,4 @@
-package page.object.constants;
+package pageobject.constants;
 
 public enum Buttons {
     ORDER_BUTTON,
